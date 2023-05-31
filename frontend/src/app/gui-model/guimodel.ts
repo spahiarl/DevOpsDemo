@@ -1,6 +1,14 @@
 /* tslint:disable:max-line-length */
 export class GuiModel {
 
+    private generateAgeOptions() {
+        const options = [];
+        for (let i = 10; i <= 65; i++) {
+            options.push({ "id": `option${i}`, "value": `${i}` });
+        }
+        return options;
+    }
+
     private _guiModel = {
         "application": {
             "title": "DevOpsDemo FS2023",
@@ -87,6 +95,41 @@ export class GuiModel {
                         }
                     ]
                 },
+                {
+                    "id": "NewPersonForm",
+                    "title": "Neue Person",
+                    "formFieldList": [
+                        {
+                            "id": "firstName",
+                            "type": "text",
+                            "name": "Vorname",
+                            "required": true,
+                            "width": 2
+                        },
+                        {
+                            "id": "lastName",
+                            "type": "text",
+                            "name": "Nachname",
+                            "required": true,
+                            "width": 2
+                        },
+                        {
+                            "id": "age",
+                            "type": "select",
+                            "name": "Alter",
+                            "options": this.generateAgeOptions(),
+                            "width": 2
+                        },
+                        {
+                            "type": "createButton",
+                            "name": "Erstellen"
+                        },
+                        {
+                            "type": "cancelButton",
+                            "name": "Abbrechen"
+                        }
+                    ]
+                }
             ],
             "pageList": [
                 {
@@ -138,6 +181,35 @@ export class GuiModel {
                         }
                     ]
                 },
+                {
+                    "id": "personPage",
+                    "elementList": [
+                        {
+                            "type": "backButton"
+                        },
+                        {
+                            "type": "newButton",
+                            "name": "Neue Person",
+                            "icon": "fa-user",
+                            "color": "green",
+                            "width": 2,
+                            "form": {
+                                "form": "NewPersonForm"
+                            }
+                        },
+                        {
+                            "type": "list",
+                            "name": "Personen",
+                            "icon": "fa-user",
+                            "color": "wet-asphalt",
+                            "search": true,
+                            "url": "/person",
+                            "form": {
+                                "form": "NewPersonForm"
+                            }
+                        }
+                    ]
+                }
             ]
         }
     };
