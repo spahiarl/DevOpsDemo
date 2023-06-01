@@ -3,7 +3,7 @@ export class GuiModel {
 
     private _guiModel = {
         "application": {
-            "title": "DevOpsDemo FS2023",
+            "title": "DevOpsDemo FS2023 Arlind",
             "formList": [
                 {
                     "id": "OwnUserForm",
@@ -88,37 +88,40 @@ export class GuiModel {
                     ]
                 },
                 {
-                    "id": "NewPersonForm",
-                    "title": "Neue Person",
+                    "id": "ModuleForm",
+                    "title": { default: "Neue Kachel" },
                     "formFieldList": [
                         {
                             "id": "firstName",
                             "type": "text",
-                            "name": "Vorname",
-                            "required": true,
-                            "width": 2
+                            "name": { default: "Vorname" },
+                            "required": true
                         },
                         {
                             "id": "lastName",
                             "type": "text",
-                            "name": "Nachname",
-                            "required": true,
-                            "width": 2
+                            "name": { default: "Name" },
+                            "required": true
                         },
+                        {
+                            "id": "country",
+                            "type": "text",
+                            "name": { default: "Herkunftsland" },
+                            "required": true
+                        }, 
                         {
                             "id": "age",
-                            "type": "select",
-                            "name": "Alter",
-                            "options": this.generateAgeOptions(),
-                            "width": 2
-                        },
-                        {
-                            "type": "createButton",
-                            "name": "Erstellen"
-                        },
+                            "type": "text",
+                            "name": { default: "Alter" },
+                            "required": true
+                        }, 
                         {
                             "type": "cancelButton",
-                            "name": "Abbrechen"
+                            "name": { default: "Abbrechen" },
+                        },
+                        {
+                            "type": "okButton",
+                            "name": { default: "Erstellen" },
                         }
                     ]
                 }
@@ -142,6 +145,17 @@ export class GuiModel {
                             "width": 2,
                             "newRow": true,
                         },
+                        // Neuer Button mit Titel "Neue Person hinzufügen"
+                        {
+                            "type": "button",
+                            "name": { default: "Neue Person hinzufügen" },
+                            "icon": "fa-plus",
+                            "color": "green",
+                            "width": 2,
+                            "form" : {
+                                "form" : "ModuleForm"
+                            }
+                        }
                     ]
                 },
                 {
@@ -170,38 +184,20 @@ export class GuiModel {
                             "form": {
                                 "form": "ToDoForm"
                             }
+                        },
+                        // Neuer Button mit Titel "Neue Person hinzufügen"
+                        {
+                            "type": "button",
+                            "name": { default: "Neue Person hinzufügen" },
+                            "icon": "fa-plus",
+                            "color": "green",
+                            "width": 2,
+                            "form" : {
+                                "form" : "Moduleform"
+                            }
                         }
                     ]
                 },
-                {
-                    "id": "personPage",
-                    "elementList": [
-                        {
-                            "type": "backButton"
-                        },
-                        {
-                            "type": "newButton",
-                            "name": "Neue Person",
-                            "icon": "fa-user",
-                            "color": "green",
-                            "width": 2,
-                            "form": {
-                                "form": "NewPersonForm"
-                            }
-                        },
-                        {
-                            "type": "list",
-                            "name": "Personen",
-                            "icon": "fa-user",
-                            "color": "wet-asphalt",
-                            "search": true,
-                            "url": "/person",
-                            "form": {
-                                "form": "NewPersonForm"
-                            }
-                        }
-                    ]
-                }
             ]
         }
     };
