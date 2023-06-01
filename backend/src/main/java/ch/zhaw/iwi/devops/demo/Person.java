@@ -1,16 +1,18 @@
 package ch.zhaw.iwi.devops.demo;
 
-public class ToDo {
+public class Person {
 
     private int id;
+    private String name;
     private String title;
     private String description;
 
-    public ToDo() {
+    public Person() {
     }
     
-    public ToDo(int id, String title, String description) {
+    public Person(int id, String name, String title, String description) {
         this.id = id;
+        this.name = name;
         this.title = title;
         this.description = description;
     }
@@ -21,6 +23,13 @@ public class ToDo {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getTitle() {
