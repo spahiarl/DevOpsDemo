@@ -1,14 +1,6 @@
 /* tslint:disable:max-line-length */
 export class GuiModel {
 
-    private generateAgeOptions() {
-        const options = [];
-        for (let i = 10; i <= 65; i++) {
-            options.push({ "id": `option${i}`, "value": `${i}` });
-        }
-        return options;
-    }
-
     private _guiModel = {
         "application": {
             "title": "DevOpsDemo FS2023",
