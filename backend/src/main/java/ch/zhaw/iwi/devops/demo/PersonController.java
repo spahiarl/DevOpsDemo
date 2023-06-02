@@ -88,5 +88,9 @@ public class PersonController {
         return this.persons.remove(id);
     }
 
+    @GetMapping("/person/list")
+    public Map<Integer,Person> getAllPerson() {
+        return this.persons;
+    }
 
 }
