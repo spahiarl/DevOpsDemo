@@ -26,4 +26,15 @@ public class PersonTest {
         assertEquals(title, person.getTitle());
         assertEquals(description, person.getDescription());
     }
+
+    @Test
+    public void testSetId() {
+        int id = 1;
+        Person person = new Person();
+        person.setId(id);
+        assertEquals(id, person.getId());
+    }
+
+    
+
 }
