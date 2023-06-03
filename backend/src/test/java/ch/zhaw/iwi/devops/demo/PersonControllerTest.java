@@ -106,8 +106,7 @@ public class PersonControllerTest {
     public void testUpdatePerson() {
         PersonController controller = new PersonController();
         controller.init();
-        Integer id = 1;
-
+        
         Person updatedPerson = new Person(2, "Donald Trump", "Arbeitslos", "Anwärter für zweite Amtszeit");
         controller.updatePerson(2, updatedPerson);
         Person person = controller.getPerson(2);
