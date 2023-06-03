@@ -11,5 +11,11 @@ public class StringCalculatorTest {
         int result = calculator.add("");
         Assertions.assertEquals(0, result);
     }
-   
+    @Test
+    public void testEinzelZahlen() {
+        StringCalculator calculator = new StringCalculator();
+        int result = calculator.add("5");
+        Assertions.assertEquals(5, result);
+    }
+    
 }
