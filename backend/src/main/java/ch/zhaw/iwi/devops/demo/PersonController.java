@@ -16,12 +16,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import java.util.logging.Logger;
 
 @CrossOrigin
 @RestController
 public class PersonController {
 
-    private Map<Integer, Person> persons = new HashMap<Integer, Person>();
+    private Map<Integer, Person> persons = new HashMap<>();
+    private static final Logger logger = Logger.getLogger(PersonController.class.getName());
+
 
     @EventListener(ApplicationReadyEvent.class)
     public void init() {
@@ -30,7 +33,7 @@ public class PersonController {
         this.persons.put(3,new Person(3, "Joe Biden", "Unit Tests", "Neues Projekt mit Unit Tests starten"));
         this.persons.put(4,new Person(4, "George W. Bush", "Deployment", "Jede Woche!"));
         this.persons.put(5,new Person(5, "Bill Clinton", "Organigramm", "Löschen"));
-        System.out.println("Init Data");
+        logger.info("Init Data");
     }
 
     @GetMapping("/test")
