@@ -35,6 +35,29 @@ public class PersonTest {
         assertEquals(id, person.getId());
     }
 
-    
+    @Test
+    public void testSetName() {
+        String name = "John Doe";
+        Person person = new Person();
+        person.setName(name);
+        assertEquals(name, person.getName());
+    }
+    @Test
+    public void testGetTitle() {
+        String title = "Engineer";
+        Person person = new Person();
+        assertNull(person.getTitle());
+        person.setTitle(title);
+        assertEquals(title, person.getTitle());
+    }
+    @Test
+    public void testGetDescription() {
+        String description = "Experienced software engineer";
+        Person person = new Person();
+        assertNull(person.getDescription());
+        person.setDescription(description);
+        assertEquals(description, person.getDescription());
+    }
+
 
 }
