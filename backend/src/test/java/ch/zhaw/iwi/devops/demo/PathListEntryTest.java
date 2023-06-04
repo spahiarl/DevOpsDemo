@@ -17,5 +17,11 @@ public class PathListEntryTest {
         Assertions.assertEquals("Key 1", entry.getKey().getName());
     }
 
+    @Test
+    void testSetName() {
+        PathListEntry<String> entry = new PathListEntry<>();
+        entry.setName("John Doe");
+        Assertions.assertEquals("John Doe", entry.getName());
+    }
     
 }
